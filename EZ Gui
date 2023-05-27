@@ -1,0 +1,15 @@
+--เอาไป By.KKR
+--------------------------------------------------------------------
+--ใส่ใน Part.ProximityPrompt
+local KKR = script.Parent
+
+KKR.Triggered:Connect(function(player)
+	if  not player:FindFirstChild("EZ") then
+		game.ServerStorage.EZ:Clone().Parent = player.PlayerGui
+	end
+end)
+----------------------------------------------------------------------
+--ใส่ใน TextButton
+script.Parent.MouseButton1Click:Connect(function()
+	script.Parent.Parent.Parent:Remove()
+end)
