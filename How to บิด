@@ -1,0 +1,49 @@
+ควบคุมความเร็วและทิศทางของมอเตอร์ หยุดการหมุนของมอเตอร์
+Js.
+DFRobotMaqueenPlus.I2CInit()
+DFRobotMaqueenPlus.mototRun(Motors.ALL, Dir.CW, 255)
+DFRobotMaqueenPlus.mototStop(Motors.M1)
+-------------------------------------------------------
+อ่านความเร็วและทิศทางของมอเตอร์ซ้าย/ขวา
+Js.
+DFRobotMaqueenPlus.I2CInit()
+basic.forever(function () {
+    serial.writeValue("speed", DFRobotMaqueenPlus.readSpeed(Motors1.M1))
+    serial.writeValue("direction", DFRobotMaqueenPlus.readDirection(Motors1.M1))
+})
+----------------------------------------------------------------------------------------
+อ่านสถานะและค่าระดับสีเทาของเซ็นเซอร์ติดตามเส้น
+Js.
+DFRobotMaqueenPlus.I2CInit()
+basic.forever(function () {
+    serial.writeValue("patorl", DFRobotMaqueenPlus.readPatrol(Patrol.L1))
+    serial.writeValue("voltage", DFRobotMaqueenPlus.readPatrolVoltage(Patrol.L1))
+})
+----------------------------------------------------------------------------------------
+อ่านค่า IR และระยะทางที่อัลตราซาวนด์ส่งกลับ
+Js.
+DFRobotMaqueenPlus.I2CInit()
+basic.forever(function () {
+    serial.writeValue("IR", DFRobotMaqueenPlus.IR_read())
+    serial.writeValue("ultrasonic", DFRobotMaqueenPlus.ultraSonic(PIN.P0, PIN.P0))
+})
+-----------------------------------------------------------------------------------------
+โมดูลควบคุมเซอร์โวสําหรับควบคุมเซอร์โว 3 ทาง
+Js.
+DFRobotMaqueenPlus.I2CInit()
+DFRobotMaqueenPlus.servoRun(Servos.S1, 100)
+------------------------------------------------------------------------
+โมดูลควบคุม RGB LED: ให้ไฟ LED RGB ของ Maqueen Plus แสดงสีต่างๆ
+Js.
+DFRobotMaqueenPlus.I2CInit()
+DFRobotMaqueenPlus.setRGBLight(RGBLight.RGBL, Color.RED)
+----------------------------------------------------------------------
+
+
+-------- 
+--    --  --       --        --    --    --    --      -------
+--  --      --   --          --  --      --  --        --     --
+--  --        --             ---         ---           -------
+--   --       --             --  --      --  --        ---
+--    --      --  --         --    --    --    --      -- --
+--------      --  --         --     --   --      --    --  --
